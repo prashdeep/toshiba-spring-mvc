@@ -8,7 +8,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -59,6 +58,4 @@ public class AssetController {
         modelAndView.addObject("message", ex.getMessage());
         return modelAndView;
     }
-
-
 }
