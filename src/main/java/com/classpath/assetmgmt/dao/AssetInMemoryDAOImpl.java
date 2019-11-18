@@ -27,7 +27,8 @@ public class AssetInMemoryDAOImpl implements AssetDAO {
 
     @Override
     public Asset findAssetById(Long id) {
-        Optional<Asset> optionalAsset = assets.stream().filter(asset -> asset.getId() == id).findFirst();
+        System.out.println("Id passed "+id);
+        Optional<Asset> optionalAsset = assets.stream().filter(asset -> asset.getId().equals(id)).findFirst();
         IllegalArgumentException ex = new IllegalArgumentException("Invalid assetId passed");
 
         return optionalAsset.orElseThrow(() -> ex);
@@ -35,6 +36,6 @@ public class AssetInMemoryDAOImpl implements AssetDAO {
 
     @Override
     public void deleteAsset(Long id) {
-        assets.removeIf(asset -> asset.getId()==id);
+        assets.removeIf(asset -> asset.getId().equals(id));
     }
 }

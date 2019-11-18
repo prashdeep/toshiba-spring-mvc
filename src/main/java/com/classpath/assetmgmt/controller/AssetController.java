@@ -31,10 +31,9 @@ public class AssetController {
     }
 
     @GetMapping("/{id}")
-    public Asset fetchAssetById(Long id){
-
-        System.out.println("%%%%%%%%%%%%%%%%%");
-        return this.assetService.findAssetById(id);
+    public String fetchAssetById(@PathVariable Long id, Model model){
+        model.addAttribute("asset", this.assetService.findAssetById(id));
+        return "asset-details";
     }
 
     @GetMapping("/register")
@@ -50,16 +49,6 @@ public class AssetController {
         Asset saveAsset = assetService.saveAsset(asset);
         model.addAttribute("asset", saveAsset);
         return "success";
-    }
-
-    @PutMapping("/{id}")
-    public void updateAsset(Asset asset){
-        this.assetService.saveAsset(asset);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteAssetById(long id){
-        this.assetService.deleteAsset(id);
     }
 
     @ExceptionHandler(RuntimeException.class)
