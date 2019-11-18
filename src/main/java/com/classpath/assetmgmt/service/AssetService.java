@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface AssetService {
 
-    void saveAsset(Asset asset);
+    Asset saveAsset(Asset asset);
 
     List<Asset> fetchAllAssets();
 

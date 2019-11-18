@@ -17,7 +17,8 @@ public class AssetServiceImpl implements AssetService {
     }
 
     @Override
-    public void saveAsset(Asset asset) {
+    public Asset saveAsset(Asset asset) {
+        return Asset.builder().id((long) Math.ceil(Math.random()*1000)).name(asset.getName()).price(asset.getPrice()).build();
 
     }
 
