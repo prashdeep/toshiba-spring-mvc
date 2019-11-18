@@ -1,6 +1,7 @@
 package com.classpath.assetmgmt.dao;
 
 import com.classpath.assetmgmt.model.Asset;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;

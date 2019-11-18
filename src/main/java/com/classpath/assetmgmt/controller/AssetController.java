@@ -2,9 +2,9 @@ package com.classpath.assetmgmt.controller;
 
 import com.classpath.assetmgmt.model.Asset;
 import com.classpath.assetmgmt.service.AssetService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -40,8 +40,13 @@ public class AssetController {
     }
 
     @PostMapping("/save")
-    public String saveAsset( @Valid @ModelAttribute("employeeObject") Asset asset){
+    public String saveAsset(@Valid Asset asset, BindingResult bindingResult){
         System.out.println("Inside the asset save controller....");
+        System.out.println(asset);
+        System.out.println(bindingResult.hasErrors());
+        if(bindingResult.hasErrors()){
+            return "assetForm";
+        }
         assetService.saveAsset(asset);
         return "success";
     }
