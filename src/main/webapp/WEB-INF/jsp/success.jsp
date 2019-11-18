@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Asset Added to the Inventory</h1>
-<h2>${asset.name} is saved in the inventory</h2>
+<h2>${asset.name} is saved in the inventory with id  ${asset.id}</h2>
 
 </body>
 </html>

@@ -5,21 +5,20 @@ import com.classpath.assetmgmt.model.Asset;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class AssetServiceImpl implements AssetService {
 
     private final AssetDAO assetDAO;
-
     public AssetServiceImpl(@Qualifier("inmemory") AssetDAO assetDAO) {
         this.assetDAO = assetDAO;
     }
 
     @Override
     public Asset saveAsset(Asset asset) {
-        return Asset.builder().id((long) Math.ceil(Math.random()*1000)).name(asset.getName()).price(asset.getPrice()).build();
-
+        return this.assetDAO.saveAsset(asset);
     }
 
     @Override
@@ -29,12 +28,12 @@ public class AssetServiceImpl implements AssetService {
     }
 
     @Override
-    public Asset findAssetById(long id) {
-        return null;
+    public Asset findAssetById(Long id) {
+        return this.assetDAO.findAssetById(id);
     }
 
     @Override
-    public void deleteAsset(long id) {
-
+    public void deleteAsset(Long id) {
+        this.assetDAO.deleteAsset(id);
     }
 }

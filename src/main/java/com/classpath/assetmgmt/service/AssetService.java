@@ -10,7 +10,7 @@ public interface AssetService {
 
     List<Asset> fetchAllAssets();
 
-    Asset findAssetById(long id);
+    Asset findAssetById(Long id);
 
-    void deleteAsset(long id);
+    void deleteAsset(Long id);
 }

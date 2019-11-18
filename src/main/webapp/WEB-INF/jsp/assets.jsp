@@ -15,7 +15,7 @@
 
 
 <c:forEach var="asset" items="${assets}">
-    <span style="display: block">${asset.name}</span>
+    <span style="display: block">Name: ${asset.name} : Id= ${asset.id} </span>
 </c:forEach>
 
 </body>

@@ -16,7 +16,7 @@ public class Asset {
 
     public Asset(){}
 
-    private long id;
+    private Long id;
 
     @NotBlank(message = "asset name cannot be blank")
     private String name;

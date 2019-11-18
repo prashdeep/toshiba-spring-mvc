@@ -31,7 +31,9 @@ public class AssetController {
     }
 
     @GetMapping("/{id}")
-    public Asset fetchAssetById(long id){
+    public Asset fetchAssetById(Long id){
+
+        System.out.println("%%%%%%%%%%%%%%%%%");
         return this.assetService.findAssetById(id);
     }
 
@@ -42,9 +44,6 @@ public class AssetController {
 
     @PostMapping("/save")
     public String saveAsset(@Valid Asset asset, BindingResult bindingResult, Model model){
-        System.out.println("Inside the asset save controller....");
-        System.out.println(asset);
-        System.out.println(bindingResult.hasErrors());
         if(bindingResult.hasErrors()){
             return "assetForm";
         }
@@ -61,6 +60,15 @@ public class AssetController {
     @DeleteMapping("/{id}")
     public void deleteAssetById(long id){
         this.assetService.deleteAsset(id);
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ModelAndView handleException(RuntimeException ex)
+    {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("error");
+        modelAndView.addObject("message", ex.getMessage());
+        return modelAndView;
     }
 
 

@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface AssetDAO {
 
-    void saveAsset(Asset asset);
+    Asset saveAsset(Asset asset);
 
     List<Asset> fetchAllAssets();
 
-    Asset findAssetById(long id);
+    Asset findAssetById(Long id);
 
-    void deleteAsset(long id);
+    void deleteAsset(Long id);
 }
