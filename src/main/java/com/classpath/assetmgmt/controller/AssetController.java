@@ -2,7 +2,6 @@ package com.classpath.assetmgmt.controller;
 
 import com.classpath.assetmgmt.model.Asset;
 import com.classpath.assetmgmt.service.AssetService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;

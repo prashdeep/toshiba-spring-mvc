@@ -1,6 +1,6 @@
 package com.classpath.assetmgmt.model;
 
-import com.classpath.assetmgmt.constraint.EmailContraint;
+import com.classpath.assetmgmt.constraint.EmailConstraint;
 import lombok.*;
 import org.hibernate.validator.constraints.Range;
 import javax.persistence.*;
@@ -39,7 +39,7 @@ public class Asset {
     @XmlElement
     private double price;
 
-    @EmailContraint(message = "email is incorrect")
+    @EmailConstraint(message = "email is incorrect")
     @Column(name="support_email")
     private String supportEmail;
 }
