@@ -9,10 +9,19 @@
 <html>
 <head>
     <title>Success</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+
 </head>
 <body>
-<h1>Asset Added to the Inventory</h1>
-<h2>${asset.name} is saved in the inventory with id  ${asset.id}</h2>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Asset Manangement</a>
+    </nav>
+    <div class="container">
+        <div style="width: 50%; margin:10px auto;">
+            <h2>Asset Added to the Inventory</h2>
+            <h2>${asset.name} is saved in the inventory with id  ${asset.id}</h2>
+        </div>
+    </div>
 
 </body>
 </html>

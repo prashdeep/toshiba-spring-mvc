@@ -4,10 +4,15 @@
 <html>
 <head>
     <title>Asset Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+
 </head>
-<body>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Asset Manangement</a>
+        </nav>
 
-<h2>Details of the Asset - <c:out value="${asset.name}"/></h2>
+        <h2>Details of the Asset - <c:out value="${asset.name}"/></h2>
 
-</body>
+    </body>
 </html>

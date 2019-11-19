@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface AssetDAO {
 
-    Asset saveAsset(Asset asset);
+    Asset saveAsset(Asset asset) ;
 
     List<Asset> fetchAllAssets();
 
